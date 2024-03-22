@@ -1,5 +1,6 @@
 package com.sky.service;
 
+import com.github.pagehelper.Page;
 import com.sky.dto.EmployeeDTO;
 import com.sky.dto.EmployeeLoginDTO;
 import com.sky.dto.EmployeePageQueryDTO;
@@ -17,5 +18,12 @@ public interface EmployeeService {
 
     void save(EmployeeDTO employeeDTO);
 
-    PageResult pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
+     PageResult pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
+
+    void statOrStop(Integer status, Long id);
+
+    Employee getById(Long id);
+
+    //编辑员工信息
+    void update(EmployeeDTO employeeDTO);
 }

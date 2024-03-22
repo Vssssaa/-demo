@@ -22,5 +22,13 @@ public interface EmployeeMapper {
     @Insert("insert into sky_take_out.employee values(null,#{name},#{username},#{password},#{phone},#{sex},#{idNumber},#{status},#{createTime},#{updateTime},#{createUser},#{updateUser})")
     void save(Employee employee);
 
-    Page<Employee> pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
+    //分页查询
+   Page<Employee> pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
+
+     //修改员工信息
+    void update(Employee employee);
+
+    //根据id查询员工信息
+    @Select("select * from sky_take_out.employee where id=#{id}")
+    Employee getById(Long id);
 }
